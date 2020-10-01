@@ -1,0 +1,99 @@
+{
+   "coretemp-isa-0000":{
+      "Adapter": "ISA adapter",
+      "Package id 0":{
+         "temp1_input": 47.000,
+         "temp1_max": 105.000,
+         "temp1_crit": 105.000,
+         "temp1_crit_alarm": 0.000
+      },
+      "Core 0":{
+         "temp2_input": 45.000,
+         "temp2_max": 105.000,
+         "temp2_crit": 105.000,
+         "temp2_crit_alarm": 0.000
+      },
+      "Core 1":{
+         "temp3_input": 45.000,
+         "temp3_max": 105.000,
+         "temp3_crit": 105.000,
+         "temp3_crit_alarm": 0.000
+      },
+      "Core 2":{
+         "temp4_input": 45.000,
+         "temp4_max": 105.000,
+         "temp4_crit": 105.000,
+         "temp4_crit_alarm": 0.000
+      },
+      "Core 3":{
+         "temp5_input": 45.000,
+         "temp5_max": 105.000,
+         "temp5_crit": 105.000,
+         "temp5_crit_alarm": 0.000
+      }
+   },
+   "acpitz-acpi-0":{
+      "Adapter": "ACPI interface",
+      "temp1":{
+         "temp1_input": 47.000,
+         "temp1_crit": 95.000
+      }
+   },
+   "emc2103-i2c-1-2e":{
+      "Adapter": "SMBus I801 adapter at f040",
+      "fan1":{
+         "fan1_input": 480.000,
+         "fan1_fault": 1.000,
+         "fan1_div": 8.000
+      },
+      "temp1":{
+         "temp1_input": 40.375,
+         "temp1_max": 85.000,
+         "temp1_min": 0.000,
+         "temp1_max_alarm": 0.000,
+         "temp1_min_alarm": 0.000,
+         "temp1_fault": 0.000
+      },
+      "temp2":{
+         "temp2_input": 40.500,
+         "temp2_max": 85.000,
+         "temp2_min": 0.000,
+         "temp2_max_alarm": 0.000,
+         "temp2_min_alarm": 0.000,
+         "temp2_fault": 0.000
+      },
+      "temp3":{
+         "temp3_input": 40.875,
+         "temp3_max": 85.000,
+         "temp3_min": 0.000,
+         "temp3_max_alarm": 0.000,
+         "temp3_min_alarm": 0.000,
+         "temp3_fault": 0.000
+      }
+   },
+   "nvme-pci-0100":{
+      "Adapter": "PCI adapter",
+      "Composite":{
+         "temp1_input": 40.850,
+         "temp1_max": 69.850,
+         "temp1_min": -273.150,
+         "temp1_crit": 79.850,
+         "temp1_alarm": 0.000
+      },
+      "Sensor 1":{
+         "temp2_input": 40.850,
+         "temp2_max": 65261.850,
+         "temp2_min": -273.150
+      },
+      "Sensor 2":{
+         "temp3_input": 40.850,
+         "temp3_max": 65261.850,
+         "temp3_min": -273.150
+      },
+      "Sensor 5":{
+         "temp6_input": 40.850,
+         "temp6_max": 65261.850,
+         "temp6_min": -273.150
+      }
+   }
+}
