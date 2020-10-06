@@ -38,7 +38,7 @@ def main():
     # logger.info("ACPI: {}".format(acpi))
     # logger.info("NVME: {}".format(nvme))
 
-    data = dict(cpu=cpu, acpi=acpi, nvme=nvme)
+    data = dict(name="CpuTemp", cpu=cpu, acpi=acpi, nvme=nvme)
     logger.info(data)
 
     mqttc = MqttClient(Config.MQTT.get("url"), Config.MQTT.get("port"))
