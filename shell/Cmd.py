@@ -19,13 +19,13 @@ class Cmd:
         else:
             # output from process
             try:
-                process = subprocess.Popen([self._command],
+                process = subprocess.Popen(self._command,
                                            stdout=subprocess.PIPE,
                                            stderr=subprocess.PIPE)
                 stdout, stderr = process.communicate()
-                self._result = str(stdout)
+                self._result = stdout.decode('utf-8')
             except (subprocess.CalledProcessError, FileNotFoundError) as e:
-                self._logger.critical("Exception during call process")
+                self._logger.critical("Exception during call process. {}".format(str(e)))
 
     def get_json_output(self) -> JsonOutput:
         return JsonOutput(self._result)

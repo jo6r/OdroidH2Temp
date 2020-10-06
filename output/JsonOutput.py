@@ -21,7 +21,11 @@ class JsonOutput(Output):
         self._logger.info(str(self._json))
 
     def _decode(self):
-        self._json = json.loads(self._data)  # Decoding JSON
+        try:
+            self._json = json.loads(self._data)  # Decoding JSON
+        except json.decoder.JSONDecodeError as e:
+            print(str(e))
+            self._logger.critical("Exception during decode json")
 
     def get_data(self):
         return self._json

@@ -7,7 +7,7 @@ from output.JsonParser import JsonParser
 
 
 class Config:
-    CMD = "sensors -j"
+    CMD = ['sensors', '-j']
     MQTT = {
         "url": "192.168.1.100",
         "port": 1883
