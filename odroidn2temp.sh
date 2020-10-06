@@ -9,6 +9,6 @@
 #   e.g. */15 * * * * /home/jo6r/projects/OdroidN2Temp/odroidn2temp.sh   # At every 15th minute
 
 export PIPENV_VENV_IN_PROJECT=1
-
+cd /home/jo6r/projects/OdroidN2Temp/
 #pipenv install
 pipenv run python odroidn2temp.py
