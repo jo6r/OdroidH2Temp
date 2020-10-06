@@ -1,4 +1,6 @@
 import logging
+import json
+from mqtt.MqttClient import MqttClient
 from shell.Cmd import Cmd
 from output.JsonOutput import JsonOutput
 from output.JsonParser import JsonParser
@@ -25,13 +27,23 @@ def main():
 
     cmd = Cmd(Config.CMD)
     cmd.run()
-    json: JsonOutput = cmd.get_json_output()
-    json.log()
+    json_output: JsonOutput = cmd.get_json_output()
+    json_output.log()
 
-    json_parser: JsonParser = JsonParser(json)
-    logger.info(json_parser.get_cpu_sensor_temp(Config.CPU_SENSORS))
-    logger.info(json_parser.get_acip_sensor_temp(Config.ACPI_SENSORS))
-    logger.info(json_parser.get_mvne_sensor_temp(Config.NVME_SENSORS))
+    json_parser: JsonParser = JsonParser(json_output)
+    cpu = json_parser.get_cpu_sensor_temp(Config.CPU_SENSORS)
+    acpi = json_parser.get_acip_sensor_temp(Config.ACPI_SENSORS)
+    nvme = json_parser.get_mvne_sensor_temp(Config.NVME_SENSORS)
+    # logger.info("CPU: {}".format(cpu))
+    # logger.info("ACPI: {}".format(acpi))
+    # logger.info("NVME: {}".format(nvme))
+
+    data = dict(cpu=cpu, acpi=acpi, nvme=nvme)
+    logger.info(data)
+
+    mqttc = MqttClient(Config.MQTT.get("url"), Config.MQTT.get("port"))
+    mqttc.publish('home/server/{}'.format("cpu_temp"), json.dumps(data))
+    mqttc.disconnect()
 
 
 if __name__ == '__main__':
