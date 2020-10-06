@@ -26,7 +26,6 @@ class Cmd:
                 self._result = str(stdout)
             except (subprocess.CalledProcessError, FileNotFoundError) as e:
                 self._logger.critical("Exception during call process")
-                # e.output
 
     def get_json_output(self) -> JsonOutput:
         return JsonOutput(self._result)

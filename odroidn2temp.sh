@@ -6,10 +6,9 @@
 #   crontab -l (list user's crontab)
 #   crontab -e (edit user's crontab)
 #   EDITOR=nano crontab -e
-#   e.g. 0 */2 * * * /srv/projects/OdroidN2Temp/odroidn2temp.sh   #every hour
+#   e.g. */15 * * * * /home/jo6r/projects/OdroidN2Temp/odroidn2temp.sh   # At every 15th minute
 
 export PIPENV_VENV_IN_PROJECT=1
 
-cd /srv/projects/OdroidN2Temp
 #pipenv install
 pipenv run python odroidn2temp.py
