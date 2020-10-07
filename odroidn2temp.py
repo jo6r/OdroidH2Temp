@@ -42,7 +42,7 @@ def main():
     logger.info(data)
 
     mqttc = MqttClient(Config.MQTT.get("url"), Config.MQTT.get("port"))
-    mqttc.publish('home/server/{}'.format("cpu_temp"), json.dumps(data))
+    mqttc.publish('home/server/{}'.format("CpuTemp"), json.dumps(data))
     mqttc.disconnect()
 
 
