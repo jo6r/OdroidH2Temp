@@ -38,11 +38,11 @@ def main():
     # logger.info("ACPI: {}".format(acpi))
     # logger.info("NVME: {}".format(nvme))
 
-    data = dict(name="CpuTemp", cpu=cpu, acpi=acpi, nvme=nvme)
+    data = dict(name="OdroidN2Temp", cpu=cpu, acpi=acpi, nvme=nvme)
     logger.info(data)
 
     mqttc = MqttClient(Config.MQTT.get("url"), Config.MQTT.get("port"))
-    mqttc.publish('home/server/{}'.format("CpuTemp"), json.dumps(data))
+    mqttc.publish('home/server/{}'.format("OdroidN2Temp"), json.dumps(data))
     mqttc.disconnect()
 
 
