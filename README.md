@@ -1,4 +1,4 @@
-# OdroidN2Temp
+# OdroidH2Temp
 OdroidN2 Temp checker
 
 requirements:
