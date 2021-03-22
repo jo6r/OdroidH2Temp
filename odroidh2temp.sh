@@ -8,7 +8,5 @@
 #   EDITOR=nano crontab -e
 #   e.g. */15 * * * * /home/jo6r/projects/OdroidH2Temp/odroidh2temp.sh   # At every 15th minute
 
-export PIPENV_VENV_IN_PROJECT=1
-cd /home/jo6r/projects/OdroidH2Temp/ || exit
-#pipenv install
-pipenv run python odroidh2temp.py
+PROJECT_DIR=/home/jo6r/projects/OdroidH2Temp
+"${PROJECT_DIR}"/.venv/bin/python "${PROJECT_DIR}"/odroidh2temp.py

@@ -25,3 +25,8 @@ class JsonParser(Parser):
         value = self._output.get_data()
         out = value[path[0]][path[1]][path[2]]
         return float(out)
+
+    def get_fan_rpm(self, path: Tuple) -> float:
+        value = self._output.get_data()
+        out = value[path[0]][path[1]][path[2]]
+        return float(out)
