@@ -9,4 +9,5 @@
 #   e.g. */15 * * * * /home/jo6r/projects/OdroidH2Temp/odroidh2temp.sh   # At every 15th minute
 
 PROJECT_DIR=/home/jo6r/projects/OdroidH2Temp
+cd ${PROJECT_DIR}
 "${PROJECT_DIR}"/.venv/bin/python "${PROJECT_DIR}"/odroidh2temp.py
