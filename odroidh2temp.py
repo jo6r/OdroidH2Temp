@@ -15,7 +15,7 @@ class Config:
     CPU_SENSORS = ("coretemp-isa-0000", "Package id 0", "temp1_input")
     ACPI_SENSORS = ("acpitz-acpi-0", "temp1", "temp1_input")
     NVME_SENSORS = ("nvme-pci-0100", "Composite", "temp1_input")
-    FAN_SENSORS = ("emc2103-i2c-0-2e", "fan1", "fan1_input")
+    FAN_SENSORS = ("emc2103-i2c-4-2e", "fan1", "fan1_input")
 
 
 def main():
